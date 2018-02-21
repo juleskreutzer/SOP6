@@ -1,1 +1,29 @@
 \chapter{Versioning}
+Door gebruik te maken van versioning kan het voor een ontwikkelaar duidelijk zijn in welke versie van de software een eventueel probleem is aangetroffen. 
+Een manier om versioning toe te passen is door gebruik te maken van Semantic Versioning (versie 2.0.0).
+Meer informatie en de volledige specificatie ven Semantic Versioning is beschikbaar op hun website: \url{https://semver.org}
+
+Bij Semantic Versioning is een versienummer opgebouwd uit drie verschillende delen. Namelijk:
+\begin{itemize}
+	\item Major
+	\item Minor
+	\item Patch
+\end{itemize}
+
+\section{Major}
+Het eerste getal van het versie nummer geeft de versie van de software aan. Dit getal begint meestal bij 1, maar in sommige gevallen kan ook versie 0 voorkomen. In deze gevallen geeft de 0 aan dat de software nog in ontwikkeling is, en dat de software nog niet als "stable" gezien kan worden.
+Wanneer het major nummer van de versie veranderd, geeft dit meestal aan dat er wijzigingen in de API zijn gedaan die niet meer compatible zijn met een vorige versie. Zo kan de data die naar een endpoint gestuurd wordt bijvoorbeeld op een andere manier worden terug gegeven.
+
+\section{Minor}
+Het tweede getal in het versienummer geeft aan welke wijziging zijn toegevoegd aan het huidige software pakket. Wijzigingen die ervoor zorgen dat het minor getal toeneemt, is meestal nieuwe functionaliteit wat beschikbaar wordt gesteld. Een vereiste van deze functionaliteit is dat deze compatible is met de huidige implementatie van de software.
+Wanneer een of meerdere functie's niet meer ondersteund worden, moet dit volgens de Semantic Versioning specificatie ook worden weergegeven in het minor nummer van de versie.
+
+\section{Patch}
+Wanneer in de huidige versie van de software een fout wordt ontdek en dit verholpen moet worden, een zogenaamde "bugfix". Deze bugfix kan ook worden weergegeven in het versienummer van de software. Dit gebeurt aan de hand van het derde nummer: het patch nummer. Het is vanzelfsprekend dat de huidige functionaliteit niet veranderd mag worden. Mocht dit wel het geval zijn, dan is het ook vereist dat het major of minor nummer van de versie aangepast wordt.
+
+\section{Overige Informatie}
+Bij de opbouw van het versie nummer is het niet toegestaan om een nummer te laten beginnen met 0 (bv. 1.01.0 is niet toegestaan). Een uitzondering hierop is de opbouw van het versie nummer wanneer de software nog in ontwikkeling is zoals beschreven in \textit{5.1 Major}.
+
+Wanneer ervoor gekozen wordt om een pre-release versie van de software beschikbaar te stellen, kan dit tevens worden weergegeven in het versie nummer. Dit gebeurd door de versie van de pre-release door middel van een koppelteken te plaatsen achter het daadwerkelijke versie nummer van de software. Een aantal voorbeelden hiervan zijn: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7
+
+Eventuele build metadata mag tevens worden weergegeven in het versie nummer. Dit wordt gebruikelijk direct na het patch nummer of de pre-release versie weergegeven met behulp van het koppelteken +.
