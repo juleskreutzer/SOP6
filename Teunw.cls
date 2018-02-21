@@ -1,5 +1,5 @@
 \ProvidesClass{Teunw}[General LaTeX class]
-\LoadClass[11pt,a4paper,dutch]{report}
+\LoadClass[12pt,a4paper,dutch]{report}
 \RequirePackage{xcolor}
 \RequirePackage{fancyhdr}
 \RequirePackage{etoolbox}
