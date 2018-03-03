@@ -20,6 +20,7 @@
 \RequirePackage{lastpage}
 \RequirePackage{afterpage}
 \RequirePackage[sfdefault]{roboto}
+\RequirePackage[none]{hyphenat} 
 
 % Define colors
 \definecolor{headingcolor}{HTML}{0D47A1}
@@ -38,3 +39,5 @@
 \titleformat{\subsection}[block]
 {\normalfont\Large\bfseries}{\color{sectioncolor}{\thesubsection}}{.45em}{\color{sectioncolor}{\Huge}}
 \titlespacing*{\subsection}{0pt}{8pt}{8pt}
+
+\hyphenation{thatshouldnot}
