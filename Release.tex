@@ -37,7 +37,11 @@ Wanneer een story of issue vanuit het backlog geïmplementeerd of verholpen is h
 Welke voorwaarden heeft een release voordat hij goedgekeurd wordt? Tests/Code analyse
 
 \section{Review}
-Wie reviewed een release? PO? Code review opzitten in github?
+Wanneer een ontwikkelaar nieuwe code heeft ontwikkeld, zal dit gemerged worden met de development branch. Tijdens dit proces zal op Github de eerste review van de code plaatsvinden. Voordat een merge request doorgevoerd kan worden, moeten verschillende ontwikkelaars toestemming geven op de merge. Hierbij vindt dus de eerste review van de code plaats.
+
+Bij het periodisch bouwen van de applicatie op de ontwikkel- of test omgeving, wordt tevens een code analyse uitgevoerd door de code style tool. Dit dient als tweede controle op de ontwikkelde code.
+
+Voordat een nieuwe versie van de applicatie uitgebracht wordt, controleert de release manager het gegenereerde rapport van de statische code analyse tool.
 
 \section{Servers}
 Voor de ontwikkeling van de applicaties worden verschillende hulpmiddelen gebruikt die bijvoorbeeld de kwaliteit van de code waarborgen door middel van een analyse van de code, het uitvoeren van unit/integratie tests, ...
