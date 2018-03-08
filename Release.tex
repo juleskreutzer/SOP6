@@ -34,7 +34,13 @@ Wanneer een story of issue vanuit het backlog geïmplementeerd of verholpen is h
 	\end{itemize}
 
 \section{Voorwaarden van een release}
-Welke voorwaarden heeft een release voordat hij goedgekeurd wordt? Tests/Code analyse
+Releases kunnen niet zomaar gedeployed worden, om kwaliteit te waarborgen worden nieuwe releases uitgebreid getest op automatische en eventueel handmatige wijze.
+
+Automatische tests kunnen maar 2 uitslagen hebben, geslaagd of niet geslaagd, als deze tests niet slagen dan moet er nog wat aangepast worden zodat de testen wel slagen.
+
+Releases kunnen getest worden in de release branch, deze branch is toegangkelijk voor alle stakeholders, als een release hier wordt goedgekeurd wordt deze samengevoegd met de master-branch.
+De laatste GO wordt gegeven door Jules en Teun, als deze GO gegeven wordt kan de release gepushed worden naar master.
+Vanuit master gaat het proces van het releasen automatisch.
 
 \section{Review}
 Wie reviewed een release? PO? Code review opzitten in github?
