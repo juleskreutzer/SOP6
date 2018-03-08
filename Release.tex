@@ -1,16 +1,28 @@
 \chapter{Release Management}
 
 \section{Content}
-Welke content staat in een release? Software/manuals/instructies
+Elke nieuwe release bevat onderstaande gegevens:
+
+\newlist{todolist1}{itemize}{2}
+\setlist[todolist1]{label=$\square$}
+\begin{itemize}
+	\item Applicatie (.war bestand)
+	\item Installatie handleiding
+	\item Gebruikershandleiding (wanneer van toepassing)	
+\end{itemize}
+
+De verschillende versies van de applicatie zullen beschikbaar worden gesteld in een repository die bereikbaar is via \href{85.144.215.28:8082}{Artifactory}.
+
+Voor elke release wordt tevens in Github een release gemaakt. In deze release op Github zijn de verschillende handleidingen en installatie instructies beschikbaar voor de corresponderende applicatie versie.
 
 \section{Uitbrengen van een release}
-Wanneer wordt een release uitgebracht? Dag/tijdstip
+Een nieuwe versie van de applicatie software wordt in de nacht van zondag op maandag uitgerold. Er is voor deze tijd gekozen omdat de verwachting is dat de gebruikers van de applicatie dan het minst actief zijn. De voorwaarden van het uitrollen van een nieuwe versie van de applicatie staat beschreven in hoofstuk 2.4 Voorwaarden van een release.
 
 \section{Definition Of Done}
 Wanneer een story of issue vanuit het backlog geïmplementeerd of verholpen is het de bedoeling dat de nieuwe code beschikbaar wordt op de productie omgeving. Voordat dit kan gebeuren, moet de code eerst getest en gecontroleerd/gereviewed worden. Een ontwikkelaar kan onderstaande Definition of Done gebruiken om te controleren of hij alle benodigde onderdelen heeft doorlopen
 	
-	\newlist{todolist}{itemize}{2}
-	\setlist[todolist]{label=$\square$}
+	\newlist{todolist2}{itemize}{2}
+	\setlist[todolist2]{label=$\square$}
 	\begin{itemize}
 			\item Unit tests uitgevoerd?
 			\item Code Review door andere ontwikkelaar
