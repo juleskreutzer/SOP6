@@ -21,7 +21,7 @@ Andere dingen waartegen je beschermt wordt zijn:
 	\item XSS
 \end{itemize}
 
-Natuurlijk bied Codacy ook een gedetaileerd overzicht van de verschillende fouten in je code.
+Natuurlijk bied Sonarqube ook een gedetaileerd overzicht van de verschillende fouten in je code.
 \begin{figure}[H]
 	\centering
 	\centering\includegraphics[width=0.95\textwidth]{images/Codacy}
@@ -29,11 +29,11 @@ Natuurlijk bied Codacy ook een gedetaileerd overzicht van de verschillende foute
 \end{figure}
 
 \section{Release}
-Codacy heeft de mogelijkheid om branches individueel te controleren op code.
+Sonarqube heeft de mogelijkheid om branches individueel te controleren op code.
 Hierdoor kan je per branch inzien wat voor cijfer deze krijgen.
 Branches worden aan een hoge standaard gehouden, de code moet minimaal een A krijgen om te mogen mergen met de development branch.
 
-Er is geen infrastructuur om te zorgen dat code met een laag cijfer niet gemerged kan worden, dit is een limitatie van de infrastructuur (dus van Github en Codacy).
+Er is geen infrastructuur om te zorgen dat code met een laag cijfer niet gemerged kan worden, dit is een limitatie van de infrastructuur (dus van Github en Sonarqube).
 Op hotfix branches hoeft niet meteen een controle uitgevoerd te worden, aangezien een hotfix zo snel mogelijk live moet zijn.
 Wel zou deze controle uitgevoerd moeten worden nadat de hotfix toegepast is, omdat slechte code in deze branch het mergen van andere branches zou kunnen hinderen.
 De ontwikkelaar is verantwoordelijk voor zijn/haar eigen branch, het is de taak van de ontwikkelaar om een slecht cijfer te repareren.

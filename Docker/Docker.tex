@@ -1,0 +1,28 @@
+\documentclass{Teunw}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[dutch]{babel} % Used for dutch naming on image caption
+\usepackage{hyperref}
+\usepackage{enumitem,amssymb}
+\usepackage{listings}
+\lstset{
+	basicstyle=\small\ttfamily,
+	columns=flexible,
+	breaklines=true
+}
+\title{Inrichten ontwikkelstraat met Docker}
+\author{Teun Willems, Jules Kreutzer}
+
+\begin{document}
+	\maketitle
+	
+	\tableofcontents
+	\pagenumbering{arabic}
+	
+	\include{inleiding}
+	\include{portainer}
+	\include{jenkins}
+	\include{sonarqube}
+	\include{applicatieServer}
+		
+\end{document}
