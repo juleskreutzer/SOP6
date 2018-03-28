@@ -16,17 +16,16 @@ In onderstaande hoofdstukken beschrijven we hoe de Jenkins container geconfigure
 \subsection{Port mapping}
 Zoals te zien is in figuur \ref{fig:JenkinsContainerDetails} is voor de container waarbinnen Jenkins uitgevoerd zal worden twee verschillende port mappings geconfigureerd, namelijk poort 8080 en 50000.
 
-Poort 8080 wordt gebruikt voor de webinterface. Hierin is het mogelijk om Jenkins te configureren en de voortang van verschillende taken te zien. Poort 50000 wordt gebruikt voor de Java API. Wanneer Jenkins wordt geconfigureerd om te werken met verschillende zoganaamde "slaves" is deze poort vooral belangrijk.
+Poort 8080 wordt gebruikt voor de webinterface. Hierin is het mogelijk om Jenkins te configureren en de voortang van verschillende taken te zien. Poort 50000 wordt gebruikt voor de Java API. Wanneer Jenkins wordt geconfigureerd om te werken met verschillende zogenaamde "slaves"\ is deze poort vooral belangrijk.
 
 \subsection{Volumes}
-Zoals te zien is zijn er twee volumes gekoppeld aan de docker container van Jenkins. Normaliter is dit enkel één volume die de Jenkins Home. Wanneer een build wordt gestart voor een project in Jenkins zal deze worden uitgevoerd in de workspace van het project. Het volledige pad van deze workspace begint met de Jenkins home (/var/jenkins\_home) gevolgd door de naam van het project.
+Zoals te zien is zijn er twee volumes gekoppeld aan de docker container van Jenkins. Normaliter is dit enkel \`e\`en volume die de Jenkins Home. Wanneer een build wordt gestart voor een project in Jenkins zal deze worden uitgevoerd in de workspace van het project. Het volledige pad van deze workspace begint met de Jenkins home (/var/jenkins\_home) gevolgd door de naam van het project.
 
 \subsubsection{Autodeploy folder mapping}
-//TODO verwijzing naar jenkins project config
 Er is voor gekozen om binnen de Jenkins container een extra map de koppelen aan een map op de host machine. Hierdoor kunnen we op een makkelijke manier een nieuwe versie van de applicatie deployen op een applicatie server. De werking van deze autodeploy folder zal in een verder hoofdstuk meer worden uitgelegd.
 
 \section{Configureren van Projecten binnen Jenkins}
-Voor alle te ontwikkelen applciaties wordt binnen jenkins een nieuw project aangemaakt. Zoals op Figuur \ref{fig:JenkinsProjectOverview} te zien is, is voor één applicatie meerdere projecten binnen Jenkins beschikbaar. De naamgeving van de verschillende projecten houden we consistent voor alle applicaties door de naam van de applicatie te nemen en vervolgens daarachter de omgeving neer te zetten waar de applicatie is beschikbaar is.
+Voor alle te ontwikkelen applciaties wordt binnen jenkins een nieuw project aangemaakt. Zoals op Figuur \ref{fig:JenkinsProjectOverview} te zien is, is voor \`e\`en applicatie meerdere projecten binnen Jenkins beschikbaar. De naamgeving van de verschillende projecten houden we consistent voor alle applicaties door de naam van de applicatie te nemen en vervolgens daarachter de omgeving neer te zetten waar de applicatie is beschikbaar is.
 
 \begin{figure}[H]
 	\centering
@@ -38,7 +37,7 @@ Voor alle te ontwikkelen applciaties wordt binnen jenkins een nieuw project aang
 \newpage
 \subsection{Maven Settings}
 De verschillende applicaties die ontwikkeld worden moeten met elkaar kunnen communiceren. Om de benodigde klassen hiervoor beschikbaar te krijgen in de verschillende applicaties hebben we ervoor gekozen om een nieuwe, "Common Interfaces", library te maken die beschikbaar is via Artifactory. 
-Hiervoor moet een nieuwe repository toegevoegd worden en moet het gebruik van deze repository ook geauthorizeerd worden. Hiervoor moeten we de configuratie van maven aanpassen. Dit kunnen we doen in settings.xml of we kunnen een "global configuration file" in Jenkins aanmaken.
+Hiervoor moet een nieuwe repository toegevoegd worden en moet het gebruik van deze repository ook geauthorizeerd worden. Hiervoor moeten we de configuratie van maven aanpassen. Dit kunnen we doen in settings.xml of we kunnen een "global configuration file"\ in Jenkins aanmaken.
 
 \begin{figure}[H]
 	\centering
@@ -46,14 +45,13 @@ Hiervoor moet een nieuwe repository toegevoegd worden en moet het gebruik van de
 	\caption{Global maven settings geconfigureerd met authorisatie voor Artifactory}
 	\label{fig:MavenSettings}
 \end{figure}
-//TODO verwijzing naar configuratie van project
 In bovenstaande afbeelding is zichtbaar hoe het nieuwe configuratie bestand voor de Maven settings eruit ziet. In hoofstuk XX wordt beschreven hoe deze configuratie gebruikt kan worden met een project
 
 \subsection{Configuratie van Project}
 Voor elke applicatie zijn er 3 verschillende projecten geconfigureerd. Deze projecten verschillen van elkaar in het uitvoeren van bepaalde automatische testen en de omgeving waarop de applicaties beschikbaar zijn. De verschillen in de configuratie worden, wanneer van toepassing, beschreven per hoofdstuk.
 \newpage
 \subsubsection{Bronbeheer}
-Voor alle applicaties is be source code beschikbaar op Github. Voor het bouwen van de applicaties in Jenkins zal de sourcecode dan ook gepulled worden vanuit Github. Het verschil van de verschillende projecten is onder andere terug te vinden in welke branch gebruikt wordt voor het bouwen van de applicatie. Onderstaande lijst geeft een overzicht van de branch per project:
+Voor alle applicaties is de source code beschikbaar op Github. Voor het bouwen van de applicaties in Jenkins zal de sourcecode dan ook gepulled worden vanuit Github. Het verschil van de verschillende projecten is onder andere terug te vinden in welke branch gebruikt wordt voor het bouwen van de applicatie. Onderstaande lijst geeft een overzicht van de branch per project:
 
 \begin{itemize}
 	\setlength\itemsep{0em}
