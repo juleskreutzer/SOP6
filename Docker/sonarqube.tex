@@ -32,3 +32,37 @@ Wanneer een gebruiker ingelogd is op Sonarqube, kan hij/zij bij zijn account een
 	\caption{Sonarqube Dashboard}
 	\label{fig:SonarqubeDashboard}
 \end{figure}
+
+\subsection{Statistieken}
+Wanneer sonarqube de nieuwe code gaat verwerken, worden een aantal statistieken berekent.
+
+\subsubsection{Cyclomatic Complexity}
+De Cyclomatische complexiteit die wordt weergegeven door Sonarqube geeft aan hoeveel testcases er nodig zijn om de volledige applicatie te testen (en dus te voorzien van 100\% code coverage).
+Op 27 maart is een analyse van één van onze applicaties uitgevoerd. In onderstaande afbeelding geeft de cyclomatische complexiteit weer dat er 101 unit tests nodig zijn om de volledige applicatie te testen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{img/CyclomaticComplexity.png}
+	\caption{Cyclomatische complexiteit voor applicatie rekening-administratie in Sonarqube}
+	\label{fig:CyclomaticComplexity}
+\end{figure}
+
+\subsubsection{Block Depth}
+Block debt geeft aan hoevaak statements genest worden (bv. if-statement in if-statement in ...). Dit kan ervoor zorgen dat doe complexiteit van het programma omhoog gaat (ivm code smells)
+\subsubsection{Technical debt}
+De technical debt geeft aan hoelang het nodig is om code smells van een klasse op te lossen. In onderstaande afbeelding kunnen we zien dat het aantal regels code en de eventuele code smells de benodigde tijd (technical debt) flink kan laten toenemen.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{img/TechnicalDebt.png}
+	\caption{Technical Debt van Rekening administratie op 27 maart 2018}
+	\label{fig:TechnicalDebt}
+\end{figure}
+\subsubsection{Fan in/out}
+Fan in houdt bij hoeveel methodes een specifieke methode kunnen aanroepen.
+Fan out houdt bij hoeveel methodes één specifieke methode kan aanroepen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{img/fan-out-fan-in.png}
+	\label{fig:faninout}
+\end{figure}
