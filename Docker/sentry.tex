@@ -1,5 +1,5 @@
 \chapter{Sentry}
-Wanneer software ontwikkeld wordt kunnen er natuurlijk verschillende exceptions optreden. Sommige van deze exceptions hebben een kleine impact op de applicatie, maar van andere exceptions wil je vaak dat ze snel worden opgelost.
+Wanneer software ontwikkeld wordt kunnen er natuurlijk verschillende exceptions optreden. Exceptions zijn (gewoonlijk) onverwachte fouten, deze fouten zijn belangrijk om te meten, zonder iets als Sentry gaan deze verloren. Sommige van deze exceptions hebben een kleine impact op de applicatie, maar van andere exceptions wil je vaak dat ze snel worden opgelost.
 \newline
 De applicaties die ontwikkeld worden maken gebruik van Sentry. Dit is een tool waarbij exceptions die optreden automatisch op een overzichtelijke manier gelogd worden. Zo kunnen we bijvoorbeeld zien hoe vaak een exception optreed.
 
@@ -33,7 +33,8 @@ Om de koppeling met Github te kunnen maken, is binnen Github een nieuwe OAuth ap
 	\caption{Sentry dashboard voor Rekening-Administratie project met test exceptions}
 	\label{fig:SentryDashboard}
 \end{figure}
-\newpage
+
+\clearpage
 \subsection{Configuratie van Sentry in een Applicatie}
 Natuurlijk is het een vereiste om Sentry binnen de verschillende applicaties te configureren. In figuur \ref{fig:SentryApplicatieConfiguratie} is te zien hoe Sentry geinitializeerd wordt binnen een applicatie.
 \begin{figure}[H]
@@ -50,3 +51,10 @@ Wanneer binnen een applicatie een exception optreedt, kunnen we deze doorsturen 
 		// Handel exception af
 	}
 \end{lstlisting}
+Sentry maakt ook onderscheid tussen productie en ontwikkeling, hierdoor krijg je geen exceptions van een ontwikkelomgeving in je feed bij Sentry.
+Sentry gaat automatisch uit van een productieomgeving just in case, via omgevingsvariablen kun je dit aanpassen.
+
+\section{Monitoring}
+Om de status van onze applicatie te monitoren zijn verschillende applicaties beschikbaar, deze me ten dan vaak dingen als reponstijd en belasting op de servers.
+Er moet nog een beslissing gemaakt worden over welk platform het beste is voor onze monitoring doeleinden.
+Dit wordt gedaan via een onderzoek dat momenteel nog loopt.
