@@ -41,3 +41,5 @@
 \titlespacing*{\subsection}{0pt}{8pt}{8pt}
 
 \hyphenation{thatshouldnot}
+
+\newcommand\todo[1]{\textcolor{red}{#1}}
