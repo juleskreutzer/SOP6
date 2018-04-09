@@ -17,9 +17,12 @@ De verschillende versies van de applicatie zullen beschikbaar worden gesteld in 
 Voor elke release wordt tevens in Github een release gemaakt. In deze release op Github zijn de verschillende handleidingen en installatie instructies beschikbaar voor de corresponderende applicatie versie.
 
 \section{Uitbrengen van een release}
-Een nieuwe versie van de applicatie software wordt in de nacht van zondag op maandag uitgerold. Er is voor deze tijd gekozen omdat de verwachting is dat de gebruikers van de applicatie dan het minst actief zijn. De voorwaarden van het uitrollen van een nieuwe versie van de applicatie staat beschreven in hoofstuk 2.4 Voorwaarden van een release.
+Een nieuwe versie van de applicatie software wordt in de nacht van zondag op maandag uitgerold. 
+Teun zal tijdens en na de deployment kijken of deze goed is verlopen en eventuele fouten verhelpen.
+Er is voor deze tijd gekozen omdat de verwachting is dat de gebruikers van de applicatie dan het minst actief zijn. De voorwaarden van het uitrollen van een nieuwe versie van de applicatie staat beschreven in hoofstuk 2.4 Voorwaarden van een release.
 
 \section{Definition Of Done}
+\label{sec:dod}
 Wanneer een story of issue vanuit het backlog geïmplementeerd of verholpen is het de bedoeling dat de nieuwe code beschikbaar wordt op de productie omgeving. Voordat dit kan gebeuren, moet de code eerst getest en gecontroleerd/gereviewed worden. Een ontwikkelaar kan onderstaande Definition of Done gebruiken om te controleren of hij alle benodigde onderdelen heeft doorlopen
 	
 	\newlist{todolist2}{itemize}{2}
@@ -34,6 +37,7 @@ Wanneer een story of issue vanuit het backlog geïmplementeerd of verholpen is h
 	\end{itemize}
 
 \section{Voorwaarden van een release}
+\label{sec:voorwaarden}
 Releases kunnen niet zomaar gedeployed worden, om kwaliteit te waarborgen worden nieuwe releases uitgebreid getest op automatische en eventueel handmatige wijze.
 
 Automatische tests kunnen maar 2 uitslagen hebben, geslaagd of niet geslaagd, als deze tests niet slagen dan moet er nog wat aangepast worden zodat de testen wel slagen.
@@ -62,5 +66,15 @@ Om de kunnen verbinden met deze servers is een VPN verbinding met vpninfralab.fh
 \subsection{Applicatie server}
 Voor het beschikbaar maken van de verschillende applicaties, is een Java EE applicatie server vereist. De applicaties die wij ontwikkelen zullen beschikbaar worden gemaakt en worden getest op een Glassfish applicatie server.
 
-\section{Process diagram}
-Voor het releasen van een nieuwe versie moeten er een aantal \todo{invullen} checks plaatsvinden, deze zijn hieronder omschreven.
+\section{Overzicht}
+Voor het releasen van een nieuwe versie op productie moeten er een aantal 7 checks plaatsvinden.
+Binnen development moeten er tests gedraait worden, deze tests draaien automatisch in Jenkins en kunnen ook de ontwikkelaar worden gedraait, het is de verantwoordelijkheid van de ontwikkelaar om te zorgen dat tests slagen binnen hun branch.
+De commit wordt daarna gekeurd op basis van de definition of done beschreven in \cref{sec:dod}.
+Nadat alle tests slagen kunnen deze naar de development branch worden doorgezet, waar ze nogmaals automatisch getest worden.
+Voor een nieuwe release uitgebracht wordt gaat er eerst een acceptatie branch getest worden, dit wordt gedaan door Jules, de product owner en andere stakeholders.
+De product owner kan deze release goedkeuren of afkeuren. Bij een goedkeuring wordt de acceptatierelease doorgezet naar productie waar de nieuwe versie voor de gebruikers beschikbaar is.
+\begin{figure}[h]
+	\centering\includegraphics[width=0.6\textwidth]{images/ReleaseUML.png}
+	\caption{Overzicht van het releaseproces}
+\end{figure}
+
