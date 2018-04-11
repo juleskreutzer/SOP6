@@ -1,6 +1,7 @@
 \chapter{Softwarewijzigingsproces}
 Van software in 2018 wordt verwacht dat deze constant geupdate blijft met onder andere nieuwe features en security patches.
 Om te zorgen dat dit proces goed verloopt geeft dit hoofdstuk weer hoe een verandering aan de software gemaakt kan worden.
+Er wordt uitgegaan van enige ontwikkelaarskennis aangezien iemand die een verandering maakt bekend moet zijn met software ontwikkeling.
 
 \section{Een eigen branch in Git}
 De applicatie staat in het versiebeheer systeem Git, met Git is er de mogelijkheid om geisoleerd van andere veranderingen een wijziging te maken, dit heet dan een branch. 
@@ -10,25 +11,43 @@ Op deze manier komt de structuur eruit te zien zoals in \cref{fig:BranchScheme}.
 In deze branch kun je vervolgens ongestoord je verandering maken.
 
 \section{Mergen via een pullrequest}
-Nadat je klaar bent met ontwikkelen van je feature kun je de unittests uitvoeren.
+Nadat je klaar bent met ontwikkelen van je feature kun je de unittests uitvoeren en eventueel aanpassen of maken als dit nodig is.
 Als deze slagen kan je een pull request maken, met een pull request kunnen anderen jouw verandering bekijken voordat zij deze daadwerkelijk toevoegen aan de codebase.
-Een pull request geeft ook de mogelijkheid te discussieren.
-Een pull request moet eerst acceptatie krijgen van een ander lid binnen het ontwikkelteam om deze toe te voegen aan de development branch.
+Een pull request geeft ook de mogelijkheid te discussieren over de nieuwe code.
+Een pull request moet eerst goedkeuring krijgen van een ander lid binnen het ontwikkelteam om deze toe te voegen aan de development branch.
 \begin{figure}[h]
 	\centering\includegraphics[width=0.6\textwidth]{images/PullRequestExample.png}
 	\caption{Een voorbeeld pull request}
 \end{figure}
 
-\clearpage
+\subsection{Tests}
+Binnen Jenkins is het mogelijk om te kijken of tests voor jouw pull request slagen.
+Dit is belangrijk, omdat falende tests een fout in de tests of codebase betekenen.
+Op Github is geen mogelijkheid om een request tegen te houden als tests niet slagen, het is dan ook de verantwoordelijkheid van ontwikkelaar en reviewer(s) om te kijken of tests geslaagd zijn.
+Als een test niet slaagt, is het de verantwoordelijkheid van de ontwikkelaar van de code om dit te repareren.
+
 \section{Acceptatietesting via staging branch}
-Nadat de veranderingen uit de development branch zijn ge-unittest en afgerond zijn kan de development branch gemerged worden naar staging.
+Nadat de veranderingen uit de development branch zijn ge-unittest en afgerond zijn (bijv. aan het einde van een sprint) kan de development branch gemerged worden naar staging.
 Binnen de staging omgeving wordt er gekeken of:
 \begin{itemize}
-	\item Er voldaan is aan de user stories.
-	\item De product owner tevreden is met het resultaat.
+	\item Er voldaan is aan de user stories, volgens de definition of done (zie \cref{sec:dod}).
+	\item De stakeholders tevreden is met het resultaat.
 	\item Of de veranderingen kunnen worden gedeployed op de productieomgeving.
 \end{itemize}
 
 \section{In productie}
-Zodra alle stakeholders tevreden zijn met de applicatie in de staging branch kan deze worden gepushed naar productie.
-Binnen de productie branch kan niet direct gepushed worden, maar merge requests kunnen er wel naartoe gemaakt worden als hotfixes. Hotfixes worden toegepast wanneer er een kritieke fout in de applicatie is ontdekt, zodat deze fout zo snel mogelijk gerepareert is.
+Zodra aan de bovenstaande voorwaarden is voldaan kan de staging branch naar productie gepushed worden.
+\par
+Bij het pushen naar productie wordt niet meer de code uit Git gebruikt, in plaats hiervan wordt de build van de applicatie in de staging omgeving gebruikt.
+Dit zorgt ervoor dat de applicatie precies hetzelfde blijft en er dus minder kans is dat een stuk geteste code een fout vertoont.
+\par
+Binnen de productie branch kan niet direct gepushed worden, maar merge requests kunnen er wel naartoe gemaakt worden, eventueel als hotfixes. Hotfixes worden toegepast wanneer er een kritieke fout in de applicatie is ontdekt, zodat deze fout zo snel mogelijk gerepareert is.
+Een hotfix gaat vaak ook niet door het normale proces heen, maar wordt direct naar productie gepushed zodat gebruikers zo snel mogelijk verder kunnen.
+
+\clearpage
+\section{Overzicht}
+Om het stappenplan wat duidelijker uit te beelden is het onderstaande diagram getekend. Dit diagram geeft samenvatting in het ontwikkelen van een nieuwe feature vanaf het begin tot aan het mergen in de productie omgeving.
+\begin{figure}[h]
+	\centering\includegraphics[width=0.56\textwidth]{images/UMLSoftwareChange.png}
+	\caption{Het softwarewijzigingsproces als UML diagram}
+\end{figure}
