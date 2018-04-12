@@ -12,22 +12,22 @@ Er wordt uitgegaan van enige ontwikkelaarskennis aangezien iemand die een verand
 \end{figure}
 
 \subsection{Rol van de externe partij}
-De externe partij is een breedt begrip. Dit kunnen zowel gebruikers van de applicatie zijn, maar ook evenetuele ontwikkelaars van frameworks die gebruikt worden binnen een applicatie.
+De externe partij is een breed begrip. Dit kunnen zowel gebruikers van de applicatie zijn, maar ook evenetuele ontwikkelaars van frameworks die gebruikt worden binnen een applicatie.
 
-De externe partij zorgt ervoor dat er nieuwe aanvragen worden gedaan voor wijzigingen in de software. Dit kunnen aanvragen zijn voor nieuwe functionaliteiten, maar ook aanvragen om eventuele bugs op te lossen. Denk hierbij bv. aan foute berekeningen, of worden die niet correct vertaald zijn.
+De externe partij zorgt ervoor dat er nieuwe aanvragen worden gedaan voor wijzigingen in de software. Dit kunnen aanvragen zijn voor nieuwe functionaliteiten, maar ook aanvragen om eventuele bugs op te lossen. Denk hierbij bv. aan foute berekeningen, of woorden die niet correct vertaald zijn.
 
 \subsection{Rol van de Support}
 De support rol zorgt ervoor dat de verschillende aanvragen juist worden bijgehouden, en dat er meer informatie bij komt om de aanvraag zo duidelijk mogelijk te hebben. Elke nieuwe aanvraag wordt voorgesteld aan de Product owner, deze kan er dan voor zorgen dat de nieuwe functionaliteit wordt geïmplementeerd.
 
 \subsection{Rol van de Product Owner}
-Wanneer de product owner vanuit de support rol een nieuwe verandering krijgt aangeboden, wilt hij deze laten analyseren door een software ontwikkelaar. Door de verandering te laten analyseren, is het voor de product owner duidelijk wat de verwachte impact zal zijn van de wijziging in de software. Door middel van verschillende Go/NoGo momenten kan de product owner duidelijkheid krijgen over de voortgang van het veranderingsverzoek.
+Wanneer de product owner vanuit de support rol een nieuwe verandering krijgt aangeboden, wil hij deze laten analyseren door een software ontwikkelaar. Door de verandering te laten analyseren, is het voor de product owner duidelijk wat de verwachte impact zal zijn van de wijziging in de software. Door middel van verschillende Go/NoGo momenten kan de product owner duidelijkheid krijgen over de voortgang van het veranderingsverzoek.
 Mocht een verandering geaccepteerd zijn, dan kan de product owner dit terug koppelen naar de support rol. Op deze manier zou de support rol dit terug kunnen koppelen naar de aanvrager van de wijziging.
 
 \subsection{Rol van de ontwikkelaar}
 De ontwikkelaar heeft de taak om de wijziging door te voeren in de software. Voordat hij/zij hiermee begint, zal er eerst een impact analyse uitgevoerd worden. Aan de hand van deze analyse kan geschat worden wat de impact van de wijziging zal hebben op de software.
-Wanneer deze analyse is voltooid en terug gekoppeld is aan de product owner volgt hier een Go of NoGo uit. Wanneer de analysy geaccepteerd wordt, kan de ontwikkelaar beginnen aan de implementatie van de wijziging.
-Hoe deze implementatie afgehandled wordt staat beschreven in hoofdstuk \ref{hfd:wd}. Wanneer de implementatie voltooid, getest en geaccepteerd door de product owner is, kan de nieuwe wijziging beschikbaar worden gestelt voor de gebruikers. Op dit punt kant tevens de product owner terugkoppeling geven naar de support rol.
-\newpage
+Wanneer deze analyse is voltooid en terug gekoppeld is aan de product owner volgt hier een Go of NoGo uit. Wanneer de analyse geaccepteerd wordt, kan de ontwikkelaar beginnen aan de implementatie van de wijziging.
+Hoe deze implementatie afgehandeld wordt staat beschreven in hoofdstuk \ref{hfd:wd}. Wanneer de implementatie voltooid, getest en geaccepteerd door de product owner is, kan de nieuwe wijziging beschikbaar worden gestelt voor de gebruikers. Op dit punt kant tevens de product owner terugkoppeling geven naar de support rol.
+
 \section{Wijzigingen verwerken door een ontwikkelaar} \label{hfd:wd}
 Onderstaande hoofdstukken geven een beeld hoe een ontwikkelaar een nieuw wijzigings verzoek kan uitvoeren.
 Veel van onderstaande informatie wordt doorheen dit document in meer detail uitgelegd. 
@@ -37,7 +37,7 @@ Zoals uitgelegd in \cref{hfd:vcs} komt elke nieuwe wijziging normaal gesproken i
 Je kan naar een nieuwe branch wisselen met het commando \textit{git checkout -b DEV-(naam)}.
 Op deze manier komt de structuur eruit te zien zoals in \cref{fig:BranchScheme}.
 In deze branch kun je vervolgens ongestoord je verandering maken.
-
+\clearpage
 \subsection{Mergen via een pullrequest}
 Nadat je klaar bent met ontwikkelen van je feature kun je de unittests uitvoeren en eventueel aanpassen of maken als dit nodig is.
 Als deze slagen kan je een pull request maken, met een pull request kunnen anderen jouw verandering bekijken voordat zij deze daadwerkelijk toevoegen aan de codebase.
