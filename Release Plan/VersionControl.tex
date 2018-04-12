@@ -42,13 +42,13 @@
 	
 	Wanneer het probleem opgelost en getest is, kan de nieuwe code na akkoord van de release manager toegevoegd worden aan de productie omgeving.
 	
-	Naast de Testing branch, is een hotfix branch de enige manier om rechtstreeks nieuwe code toe te voegen aan de master branch.
+	Naast de Release-branch, is een hotfix branch de enige manier om rechtstreeks nieuwe code toe te voegen aan de master branch.
 	
-	\subsection{Testing}
-	De Testing-branch zal gebruikt worden om nieuwe functionaliteit die ontwikkeld zijn in de development branch te testen. Wanneer de functionaliteit in de testing branch geaccepteerd wordt, zal deze worden doorgezet naar de master branch zodat de verbeteringen en/of nieuwe wijzigingen beschikbaar zijn voor alle gebruikers op de productie omgeving.
-	De Testing-branch heeft dezelfde setup als de Master-branch. Dit wilt zeggen dat het op deze branch ook niet mogelijk is om rechtstreeks code te committen.
+	\subsection{Release}
+	De Release-branch zal gebruikt worden om nieuwe functionaliteit die ontwikkeld zijn in de development branch te testen. 
+	De Release-branch heeft dezelfde setup als de Master-branch. Dit wilt zeggen dat het op deze branch ook niet mogelijk is om rechtstreeks code te committen.
 	
-	De testing omgeving die gebruikt wordt om de code van de testing branch beschikbaar te stellen, kan tevens gebruikt worden door testers om nieuwe functionaliteit of verbeteringen te testen. Daarnaast kan de release manager akkoord geven op de versie die in deze omgeving staat, waardoor deze verplaatst zal worden naar de productie omgeving.
+	De test omgeving die gebruikt wordt om de code van de Release-branch beschikbaar te stellen, kan tevens gebruikt worden door testers om nieuwe functionaliteit of verbeteringen te testen. Daarnaast kan de release manager akkoord geven op de versie die in deze omgeving staat, waardoor deze verplaatst zal worden naar de Acceptatie omgeving.
 	\subsection{Development}
 	
 	De Development-branch bevat nieuwe functionaliteit of verbeteringen die ontwikkeld zijn. Deze branch is vrij toegangkelijk voor de ontwikkelaar om eventueel kleine(re) verbeteringen door te voeren.	
